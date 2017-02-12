@@ -1,6 +1,6 @@
-import Vue from "vue";
-import accountTransformer from "./../../transformers/account";
-import store from "./../../store";
+import Vue from 'vue';
+import accountTransformer from './../../transformers/account';
+import store from './../../store';
 
 // When the request succeeds
 const success = (account) => {

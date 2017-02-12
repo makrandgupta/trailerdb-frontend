@@ -1,5 +1,5 @@
-import Vue from "vue";
-import {LOGOUT, CHECK_AUTHENTICATION, SET_AUTH_ERROR, LOGIN} from "./../../mutation-types";
+import Vue from 'vue';
+import { LOGOUT, CHECK_AUTHENTICATION, SET_AUTH_ERROR, LOGIN } from './../../mutation-types';
 
 export default {
   [CHECK_AUTHENTICATION](state) {

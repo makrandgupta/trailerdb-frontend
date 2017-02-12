@@ -1,6 +1,6 @@
-import Vue from "vue";
-import accountService from "./../account";
-import store from "./../../store";
+import Vue from 'vue';
+import accountService from './../account';
+import store from './../../store';
 
 // When the request succeeds
 const success = (token) => {

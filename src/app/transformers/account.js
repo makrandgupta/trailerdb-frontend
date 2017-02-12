@@ -4,7 +4,7 @@
  *
  * The transformer for the account
  */
-import Transformer from "./transformer";
+import Transformer from './transformer';
 
 export default class AccountTransformer extends Transformer {
   /**

@@ -5,7 +5,7 @@
  * All the actions that can be used
  * inside the store
  */
-import * as types from "./mutation-types";
+import * as types from './mutation-types';
 
 // Account
 export const getAccount = ({ commit }, account) => {
@@ -25,6 +25,6 @@ export const checkAuthentication = ({ commit }) => {
   commit(types.CHECK_AUTHENTICATION);
 };
 
-export const setAuthError = ({commit}, error) => {
+export const setAuthError = ({ commit }, error) => {
   commit(types.SET_AUTH_ERROR, error);
 };

@@ -13,7 +13,7 @@
  *
  * http://rc.vuejs.org/guide/
  */
-import Vue from "vue";
+import Vue from 'vue';
 /* ============
  * Axios
  * ============
@@ -24,7 +24,7 @@ import Vue from "vue";
  *
  * https://github.com/mzabriskie/axios
  */
-import Axios from "axios";
+import Axios from 'axios';
 /* ============
  * Vuex Router Sync
  * ============
@@ -33,8 +33,8 @@ import Axios from "axios";
  *
  * https://github.com/vuejs/vuex-router-sync/blob/master/README.md
  */
-import VuexRouterSync from "vuex-router-sync";
-import store from "./app/store";
+import VuexRouterSync from 'vuex-router-sync';
+import store from './app/store';
 /* ============
  * Vue Router
  * ============
@@ -44,8 +44,8 @@ import store from "./app/store";
  *
  * http://router.vuejs.org/en/index.html
  */
-import VueRouter from "vue-router";
-import routes from "./app/routes";
+import VueRouter from 'vue-router';
+import routes from './app/routes';
 /* ============
  * Vue i18n
  * ============
@@ -54,8 +54,8 @@ import routes from "./app/routes";
  *
  * https://kazupon.github.io/vue-i18n/
  */
-import VueI18n from "vue-i18n";
-import locale from "./app/locale";
+import VueI18n from 'vue-i18n';
+import locale from './app/locale';
 /* ============
  * jQuery
  * ============
@@ -64,7 +64,7 @@ import locale from "./app/locale";
  *
  * http://jquery.com/
  */
-import jQuery from "jquery";
+import jQuery from 'jquery';
 
 Vue.config.debug = process.env.NODE_ENV !== 'production';
 
