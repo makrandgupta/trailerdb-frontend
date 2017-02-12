@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import qs from 'querystring';
 import accountService from './../account';
 import store from './../../store';
 
@@ -18,7 +19,7 @@ const failed = (error) => {
 };
 
 export default (user) => {
-  Vue.$http.post('/auth/login', user)
+  Vue.$http.post('/auth/login', qs.stringify(user))
     .then((response) => {
       success(response.data.token);
     })

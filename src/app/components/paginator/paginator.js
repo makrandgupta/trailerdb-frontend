@@ -24,25 +24,14 @@ export default {
       lastPage: '',
       nextPageParams: {},
       prevPageParams: {},
-      config: {
-        remoteData: 'data',
-        remoteCurrentPage: 'currentPage',
-        remoteLastPage: 'lastPage',
-        remoteNextPageUrl: 'nextPageParams',
-        remotePrevPageUrl: 'prevPageParams',
-        previousButtonText: 'Previous',
-        nextButtonText: 'Next'
-      }
     }
   },
   methods: {
     fetchData (options) {
-      var self = this;
+      let self = this;
       options = options || this.options;
-      // console.log('req options', options);
       Vue.$http.get(this.base_url, { params: options})
         .then(function (response) {
-          console.log('headers', response.headers);
           self.handleResponse(response);
         }).catch(function (response) {
         console.log('Fetching data failed.', response);
@@ -50,12 +39,10 @@ export default {
     },
     handleResponse (response) {
       this.makePagination(response.headers);
-      // let data = utils.getNestedValue(response.data, this.config.remoteData);
       this.$emit('update', response.data);
     },
     makePagination (headers) {
       let parsed_links = parseLink(headers.link);
-      console.log('parsed headers', parsed_links);
       if (parsed_links.next) {
         this.currentPage = parsed_links.next.p;
       }
