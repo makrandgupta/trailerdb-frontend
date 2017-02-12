@@ -15,7 +15,6 @@ export default {
         email: null,
         password: null,
       },
-      // error: this.$store.state.auth.error,
     };
   },
   computed: {
