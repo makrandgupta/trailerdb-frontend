@@ -6,15 +6,13 @@
       Welcome!
     </h1>
     <div slot="body">
-      <ul>
-        <li v-for="movie in movies">
-          {{ movie.name }}
-        </li>
-      </ul>
-      <v-paginator :base_url="base_url" @update="update"></v-paginator>
+      <span v-for="movie in movies">
+        <v-moviecard :movie="movie"></v-moviecard>
+      </span>
+      <v-paginator :base_url="base_url" :options="options" @update="update"></v-paginator>
     </div>
     <div slot="footer">
-      Made with love by Vivid Web
+      :)
     </div>
   </v-panel>
 </v-layout>

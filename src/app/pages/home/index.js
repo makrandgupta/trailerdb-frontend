@@ -13,12 +13,13 @@ export default {
       movies: [],
       base_url: 'http://localhost:3000/movie/list',
       options: {
-        pageSize: 1,
+        pageSize: 3,
         p: 0,
       },
     }
   },
   components: {
+    VMoviecard: require('components/moviecard/moviecard.vue'),
     VPaginator: require('components/paginator/paginator.vue'),
     VLayout: require('layouts/default/default.vue'),
     VPanel: require('components/panel/panel.vue'),

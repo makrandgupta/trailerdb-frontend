@@ -1,0 +1,11 @@
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" :src="thumbnail" :alt="movie.name">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{ movie.name }}</h4>
+    <p>Director: {{ movie.director.name }}, Actors: <span v-for="actor in movie.actors">{{actor.name}}, </span></p>
+  </div>
+</div>
