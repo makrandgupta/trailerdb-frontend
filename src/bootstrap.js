@@ -4,8 +4,6 @@
  *
  * Will configure and bootstrap the application
  */
-
-
 /* ============
  * Vue
  * ============
@@ -15,11 +13,7 @@
  *
  * http://rc.vuejs.org/guide/
  */
-import Vue from 'vue';
-
-Vue.config.debug = process.env.NODE_ENV !== 'production';
-
-
+import Vue from "vue";
 /* ============
  * Axios
  * ============
@@ -30,21 +24,7 @@ Vue.config.debug = process.env.NODE_ENV !== 'production';
  *
  * https://github.com/mzabriskie/axios
  */
-import Axios from 'axios';
-import authService from './app/services/auth';
-
-Axios.defaults.baseURL = process.env.API_LOCATION;
-Axios.defaults.headers.common.Accept = 'application/json';
-Axios.interceptors.response.use(
-  response => response,
-  (error) => {
-    if (error.response.status === 401) {
-      authService.logout();
-    }
-  });
-Vue.$http = Axios;
-
-
+import Axios from "axios";
 /* ============
  * Vuex Router Sync
  * ============
@@ -53,12 +33,8 @@ Vue.$http = Axios;
  *
  * https://github.com/vuejs/vuex-router-sync/blob/master/README.md
  */
-import VuexRouterSync from 'vuex-router-sync';
-import store from './app/store';
-
-store.dispatch('checkAuthentication');
-
-
+import VuexRouterSync from "vuex-router-sync";
+import store from "./app/store";
 /* ============
  * Vue Router
  * ============
@@ -68,13 +44,44 @@ store.dispatch('checkAuthentication');
  *
  * http://router.vuejs.org/en/index.html
  */
-import VueRouter from 'vue-router';
-import routes from './app/routes';
+import VueRouter from "vue-router";
+import routes from "./app/routes";
+/* ============
+ * Vue i18n
+ * ============
+ *
+ * Internationalization plugin of Vue.js
+ *
+ * https://kazupon.github.io/vue-i18n/
+ */
+import VueI18n from "vue-i18n";
+import locale from "./app/locale";
+/* ============
+ * jQuery
+ * ============
+ *
+ * Require jQuery
+ *
+ * http://jquery.com/
+ */
+import jQuery from "jquery";
+
+Vue.config.debug = process.env.NODE_ENV !== 'production';
+
+
+Axios.defaults.baseURL = process.env.API_LOCATION;
+Axios.defaults.headers.common.Accept = 'application/json';
+Vue.$http = Axios;
+
+
+store.dispatch('checkAuthentication');
+
 
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
   routes,
+  mode: 'history',
 });
 router.beforeEach((to, from, next) => {
   if (to.matched.some(m => m.meta.auth) && !store.state.auth.authenticated) {
@@ -102,17 +109,6 @@ VuexRouterSync.sync(store, router);
 Vue.router = router;
 
 
-/* ============
- * Vue i18n
- * ============
- *
- * Internationalization plugin of Vue.js
- *
- * https://kazupon.github.io/vue-i18n/
- */
-import VueI18n from 'vue-i18n';
-import locale from './app/locale';
-
 Vue.use(VueI18n);
 
 Vue.config.lang = 'en';
@@ -121,16 +117,6 @@ Object.keys(locale).forEach((lang) => {
   Vue.locale(lang, locale[lang]);
 });
 
-
-/* ============
- * jQuery
- * ============
- *
- * Require jQuery
- *
- * http://jquery.com/
- */
-import jQuery from 'jquery';
 
 window.$ = window.jQuery = jQuery;
 

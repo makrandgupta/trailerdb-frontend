@@ -16,11 +16,11 @@ export default [
   {
     path: '/home',
     name: 'home.index',
-    component: require('pages/home/index/index.vue'),
+    component: require('pages/home/index.vue'),
 
     // If the user needs to be authenticated to view this page
     meta: {
-      auth: false,
+      auth: true,
     },
   },
 
@@ -28,7 +28,7 @@ export default [
   {
     path: '/account',
     name: 'account.index',
-    component: require('pages/account/index/index.vue'),
+    component: require('pages/account/index.vue'),
 
     // If the user needs to be authenticated to view this page
     meta: {
@@ -40,7 +40,7 @@ export default [
   {
     path: '/login',
     name: 'login.index',
-    component: require('pages/login/index/index.vue'),
+    component: require('pages/login/index.vue'),
 
     // If the user needs to be a guest to view this page
     meta: {
@@ -52,7 +52,7 @@ export default [
   {
     path: '/register',
     name: 'register.index',
-    component: require('pages/register/index/index.vue'),
+    component: require('pages/register/index.vue'),
 
     // If the user needs to be a guest to view this page
     meta: {
@@ -63,8 +63,14 @@ export default [
     path: '/',
     redirect: '/home',
   },
+  // {
+  //   path: '/*',
+  //   redirect: '/home',
+  // },
+
+  // 404
   {
-    path: '/*',
-    redirect: '/home',
+    path: '*',
+    component: require('pages/404/index.vue'),
   },
 ];

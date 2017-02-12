@@ -4,8 +4,7 @@
  *
  * The transformer for the account
  */
-
-import Transformer from './transformer';
+import Transformer from "./transformer";
 
 export default class AccountTransformer extends Transformer {
   /**
@@ -15,11 +14,13 @@ export default class AccountTransformer extends Transformer {
    *
    * @returns {Object} The transformed account
    */
-  static fetch(account) {
+  static fetch(payload) {
     return {
-      email: account.email,
-      firstName: account.first_name,
-      lastName: account.last_name,
+      id: payload.data.user.id,
+      username: payload.data.user.username,
+      email: payload.data.user.email,
+      firstName: payload.data.user.firstname,
+      lastName: payload.data.user.lastname,
     };
   }
 

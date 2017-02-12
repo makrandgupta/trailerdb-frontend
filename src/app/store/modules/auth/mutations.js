@@ -1,9 +1,5 @@
-import Vue from 'vue';
-import {
-  LOGOUT,
-  CHECK_AUTHENTICATION,
-  LOGIN,
-} from './../../mutation-types';
+import Vue from "vue";
+import {LOGOUT, CHECK_AUTHENTICATION, SET_AUTH_ERROR, LOGIN} from "./../../mutation-types";
 
 export default {
   [CHECK_AUTHENTICATION](state) {
@@ -22,6 +18,11 @@ export default {
   [LOGOUT](state) {
     state.authenticated = false;
     localStorage.removeItem('id_token');
+    Vue.$http.defaults.headers.common.Authorization = '';
+  },
+
+  [SET_AUTH_ERROR](state, error) {
+    state.error = error;
     Vue.$http.defaults.headers.common.Authorization = '';
   },
 };

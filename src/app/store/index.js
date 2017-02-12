@@ -6,16 +6,14 @@
  *
  * http://vuex.vuejs.org/en/index.html
  */
-
-import Vue from 'vue';
-import Vuex from 'vuex';
-import createLogger from 'vuex/dist/logger';
-import * as actions from './actions';
-import * as getters from './getters';
-
+import Vue from "vue";
+import Vuex from "vuex";
+import createLogger from "vuex/dist/logger";
+import * as actions from "./actions";
+// import * as getters from './getters';
 // Modules
-import account from './modules/account';
-import auth from './modules/auth';
+import account from "./modules/account";
+import auth from "./modules/auth";
 
 Vue.use(Vuex);
 
@@ -30,7 +28,11 @@ export default new Vuex.Store({
   /**
    * Assign the getters to the store
    */
-  getters,
+  getters: {
+    authError(state) {
+      return state.auth.error;
+    },
+  },
 
   /**
    * Assign the modules to the store
