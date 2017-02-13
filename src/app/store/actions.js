@@ -28,3 +28,7 @@ export const checkAuthentication = ({ commit }) => {
 export const setAuthError = ({ commit }, error) => {
   commit(types.SET_AUTH_ERROR, error);
 };
+
+export const getMovie = ({ commit }, movie) => {
+  commit(types.GET_MOVIE, movie);
+};

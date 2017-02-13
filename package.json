@@ -21,6 +21,7 @@
     "vue": "^2.1.0",
     "vue-i18n": "^4.10.0",
     "vue-router": "^2.1.1",
+    "vue-video-player": "^2.5.0",
     "vuex": "^2.1.1",
     "vuex-router-sync": "^3.0.0"
   },

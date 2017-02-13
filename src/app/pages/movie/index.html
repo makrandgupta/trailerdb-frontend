@@ -1,0 +1,10 @@
+<v-layout>
+  <v-panel contextual-style="primary">
+    <h1 class="panel-title" slot="heading">
+      {{ movie.name }}
+    </h1>
+    <div slot="body">
+      <video-player :options="videoOptions"></video-player>
+    </div>
+  </v-panel>
+</v-layout>

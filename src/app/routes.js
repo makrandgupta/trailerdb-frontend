@@ -59,6 +59,18 @@ export default [
       guest: true,
     },
   },
+
+  // Movie
+  {
+    path: '/movie/:id',
+    name: 'movie.index',
+    component: require('pages/movie/index.vue'),
+    props: true,
+    // If the user needs to be a guest to view this page
+    meta: {
+      auth: true,
+    },
+  },
   {
     path: '/',
     redirect: '/home',

@@ -11,7 +11,7 @@ export default {
   data () {
     return {
       movies: [],
-      base_url: 'http://localhost:3000/movie/list',
+      base_url: '/movie/list',
       options: {
         pageSize: 3,
         p: 0,

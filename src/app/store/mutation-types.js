@@ -6,3 +6,7 @@ export const CHECK_AUTHENTICATION = 'CHECK_AUTHENTICATION';
 export const SET_AUTH_ERROR = 'SET_AUTH_ERROR';
 export const LOGOUT = 'LOGOUT';
 export const LOGIN = 'LOGIN';
+
+// Movie
+export const GET_MOVIE = 'GET_MOVIE';
+export const SET_MOVIE_ERROR = 'SET_MOVIE_ERROR';

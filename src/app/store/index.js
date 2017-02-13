@@ -14,6 +14,7 @@ import * as actions from './actions';
 // Modules
 import account from './modules/account';
 import auth from './modules/auth';
+import movie from './modules/movie';
 
 Vue.use(Vuex);
 
@@ -32,6 +33,12 @@ export default new Vuex.Store({
     authError(state) {
       return state.auth.error;
     },
+    movieError(state) {
+      return state.movie.error;
+    },
+    movie(state) {
+      return state.movie.data;
+    },
   },
 
   /**
@@ -40,6 +47,7 @@ export default new Vuex.Store({
   modules: {
     account,
     auth,
+    movie,
   },
 
   /**

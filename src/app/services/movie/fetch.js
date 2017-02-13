@@ -1,20 +1,19 @@
 import Vue from 'vue';
-import accountTransformer from './../../transformers/account';
 import store from './../../store';
 
 // When the request succeeds
 const success = (account) => {
-  account = accountTransformer.fetch(account);
-  store.dispatch('getAccount', account);
+  store.dispatch('getMovie', account);
 };
 
 // When the request fails
 const failed = (error) => {
-  store.dispatch('setAuthError', error.data);
+  store.dispatch('setMovieError', error.data);
 };
 
-export default () => {
-  Vue.$http.get('/auth/account')
+export default (id) => {
+  const url = `/movie/${id}`;
+  Vue.$http.get(url)
     .then((response) => {
       success(response.data);
     })
