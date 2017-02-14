@@ -4,6 +4,11 @@
       {{ movie.name }}
     </h1>
     <div slot="body">
+      <p><strong>Director</strong>: {{ movie.director.name }}, </p>
+      <p><strong>Actors</strong>: <span v-for="actor in movie.actors">{{actor.name}}, </span></p>
+      <p><strong>Description</strong>: {{ movie.description }}</p>
+    </div>
+    <div slot="body">
       <video-player :options="videoOptions"></video-player>
     </div>
   </v-panel>

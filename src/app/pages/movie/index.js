@@ -1,5 +1,6 @@
 import movieService from "./../../services/movie";
 import {mapGetters} from "vuex";
+import {videoPlayer} from "vue-video-player";
 
 export default {
   props: {
@@ -12,14 +13,15 @@ export default {
     return {
       videoOptions: {
         src: '',
-        // poster: this.movie.thumbnail,
+        poster: '',
       }
     }
   },
   methods: {
     getData(id) {
       movieService.fetch(id);
-      this.src = this.movie.trailer;
+      this.videoOptions.src = this.movie.trailer;
+      this.videoOptions.poster = this.movie.thumnbail;
     },
   },
   computed: {
@@ -28,13 +30,14 @@ export default {
   watch:{
     id (newId){
       this.getData(newId);
-    }
+    },
   },
   created () {
     this.getData(this.id);
   },
   components: {
-    VLayout: require('layouts/minimal/minimal.vue'),
+    VLayout: require('layouts/default/default.vue'),
     VPanel: require('components/panel/panel.vue'),
+    videoPlayer,
   },
 };
